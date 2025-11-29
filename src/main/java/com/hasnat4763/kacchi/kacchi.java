@@ -1,10 +1,7 @@
 package com.hasnat4763.kacchi;
 
-import com.hasnat4763.kacchi.block.ModBlocks;
 import com.hasnat4763.kacchi.item.ModCreativeModeTabs;
 import com.hasnat4763.kacchi.item.ModItems;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -32,7 +29,6 @@ public class kacchi {
         modEventBus.addListener(this::commonSetup);
         NeoForge.EVENT_BUS.register(this);
         ModItems.register(modEventBus);
-        ModBlocks.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
 
     }

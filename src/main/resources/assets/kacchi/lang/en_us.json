@@ -8,5 +8,8 @@
   "item.kacchi.cup": "Earthen Cup",
   "item.kacchi.uncookedcup": "Raw Earthen Cup",
   "item.kacchi.yogurt": "Misti Doi",
-  "item.kacchi.chopped_potato": "Chopped Potato"
+  "item.kacchi.chopped_potato": "Chopped Potato",
+  "item.kacchi.chai_seeds": "Chai Seeds",
+  "item.kacchi.chai_leaves": "Chai Leaves",
+  "block.kacchi.chai_crop": "Chai Crop"
 }

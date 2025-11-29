@@ -1,7 +1,9 @@
 package com.hasnat4763.kacchi.item;
 
+import com.hasnat4763.kacchi.block.ModBlocks;
 import com.hasnat4763.kacchi.kacchi;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -30,6 +32,11 @@ public class ModItems {
             ()-> new Item(new Item.Properties().stacksTo(16)));
     public static final DeferredItem<Item> CHOPPED_POTATO = ITEMS.register("chopped_potato",
             ()-> new Item(new Item.Properties().stacksTo(64)));
+    public static final DeferredItem<Item> CHAI_SEEDS = ITEMS.register("chai_seeds",
+            ()-> new ItemNameBlockItem(ModBlocks.CHAI_CROP.get(), new Item.Properties()));
+    public static final DeferredItem<Item> CHAI_LEAVES = ITEMS.register("chai_leaves",
+            ()-> new Item(new Item.Properties())
+    );
 
     public static void register(IEventBus eventbus) {
         LOGGER.info("Registering Items for " + kacchi.MODID);

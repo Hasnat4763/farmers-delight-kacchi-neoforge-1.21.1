@@ -1,7 +1,9 @@
 package com.hasnat4763.kacchi.item;
 
 import com.hasnat4763.kacchi.block.ModBlocks;
+import com.hasnat4763.kacchi.fluids.ModFluids;
 import com.hasnat4763.kacchi.kacchi;
+import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.neoforged.bus.api.IEventBus;
@@ -35,8 +37,11 @@ public class ModItems {
     public static final DeferredItem<Item> CHAI_SEEDS = ITEMS.register("chai_seeds",
             ()-> new ItemNameBlockItem(ModBlocks.CHAI_CROP.get(), new Item.Properties()));
     public static final DeferredItem<Item> CHAI_LEAVES = ITEMS.register("chai_leaves",
-            ()-> new Item(new Item.Properties())
-    );
+            ()-> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> CHAI = ITEMS.register("chai",
+            ()-> new Item(new Item.Properties().food(ModFoods.CHAI)));
+    public static final DeferredItem<Item> CHAI_BUCKET = ITEMS.register("chai_bucket",
+            ()-> new BucketItem(ModFluids.SOURCE_CHAI_FLUID.get(), new Item.Properties().stacksTo(1)));
 
     public static void register(IEventBus eventbus) {
         LOGGER.info("Registering Items for " + kacchi.MODID);

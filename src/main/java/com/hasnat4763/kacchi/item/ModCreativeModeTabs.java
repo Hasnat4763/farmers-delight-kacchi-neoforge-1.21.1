@@ -31,6 +31,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.MASALA.get());
                         output.accept(ModItems.CHOPPED_POTATO.get());
                         output.accept(ModItems.CHAI_SEEDS.get());
+                        output.accept(ModItems.CHAI_LEAVES.get());
                     }))
                     .build()
     );

@@ -1,6 +1,8 @@
 package com.hasnat4763.kacchi;
 
 import com.hasnat4763.kacchi.block.ModBlocks;
+import com.hasnat4763.kacchi.fluids.ModFluidTypes;
+import com.hasnat4763.kacchi.fluids.ModFluids;
 import com.hasnat4763.kacchi.item.ModCreativeModeTabs;
 import com.hasnat4763.kacchi.item.ModItems;
 import org.slf4j.Logger;
@@ -32,6 +34,8 @@ public class kacchi {
         ModItems.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModFluidTypes.register(modEventBus);
+        ModFluids.register(modEventBus);
 
     }
 

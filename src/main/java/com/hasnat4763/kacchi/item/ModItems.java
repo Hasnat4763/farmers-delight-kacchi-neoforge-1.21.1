@@ -6,9 +6,13 @@ import com.hasnat4763.kacchi.kacchi;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.material.Fluid;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+
+import java.util.function.Supplier;
 
 import static com.hasnat4763.kacchi.kacchi.LOGGER;
 
@@ -38,10 +42,12 @@ public class ModItems {
             ()-> new ItemNameBlockItem(ModBlocks.CHAI_CROP.get(), new Item.Properties()));
     public static final DeferredItem<Item> CHAI_LEAVES = ITEMS.register("chai_leaves",
             ()-> new Item(new Item.Properties()));
-    public static final DeferredItem<Item> CHAI = ITEMS.register("chai",
-            ()-> new Item(new Item.Properties().food(ModFoods.CHAI)));
-    public static final DeferredItem<Item> CHAI_BUCKET = ITEMS.register("chai_bucket",
-            ()-> new BucketItem(ModFluids.SOURCE_CHAI_FLUID.get(), new Item.Properties().stacksTo(1)));
+    public static final Supplier<Item> CHAI_BUCKET = ITEMS.register("chai_bucket",
+            () -> new EdibleChaiBucket(
+                    ModFluids.SOURCE_CHAI_FLUID.get(),
+                    new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)
+            ));
+
 
     public static void register(IEventBus eventbus) {
         LOGGER.info("Registering Items for " + kacchi.MODID);

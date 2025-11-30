@@ -3,6 +3,7 @@ package com.hasnat4763.kacchi.item;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.Items;
 
 public class ModFoods {
     public static final FoodProperties KACCHI = new FoodProperties.Builder()
@@ -43,5 +44,7 @@ public class ModFoods {
             .nutrition(5)
             .saturationModifier(0.5f)
             .effect(()-> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 900, 2),1f)
+            .alwaysEdible()
+            .usingConvertsTo(Items.BUCKET)
             .build();
 }

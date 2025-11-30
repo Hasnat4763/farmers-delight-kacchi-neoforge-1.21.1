@@ -13,9 +13,9 @@ import org.joml.Vector3f;
 import java.util.function.Supplier;
 
 public class ModFluidTypes {
-    public static final ResourceLocation WATER_STILL_RL = ResourceLocation.fromNamespaceAndPath(kacchi.MODID,"block/water_still");
-    public static final ResourceLocation WATER_FLOWING_RL = ResourceLocation.fromNamespaceAndPath(kacchi.MODID, "block/water_flow");
-    public static final ResourceLocation SOAP_OVERLAY_RL = ResourceLocation.fromNamespaceAndPath(kacchi.MODID,"misc/in_soap_water");
+    public static final ResourceLocation WATER_STILL_RL = ResourceLocation.fromNamespaceAndPath(kacchi.MODID,"block/chai_still");
+    public static final ResourceLocation WATER_FLOWING_RL = ResourceLocation.fromNamespaceAndPath(kacchi.MODID, "block/chai_flow");
+    public static final ResourceLocation CHAI_OVERLAY_RL = ResourceLocation.fromNamespaceAndPath(kacchi.MODID,"misc/in_chai_water");
 
     public static final DeferredRegister<FluidType> FLUID_TYPES =
             DeferredRegister.create(NeoForgeRegistries.Keys.FLUID_TYPES, kacchi.MODID);
@@ -23,9 +23,9 @@ public class ModFluidTypes {
 
     public static final Supplier<FluidType> CHAI_FLUID = register("chai_fluid",
             FluidType.Properties.create()
-                    .density(10)
-                    .viscosity(5)
-                    .temperature(310)
+                    .density(1)
+                    .viscosity(1)
+                    .temperature(300)
                     .sound(SoundAction.get("drink"), SoundEvents.HONEY_DRINK)
             );
 
@@ -34,9 +34,12 @@ public class ModFluidTypes {
         return FLUID_TYPES.register(name, ()-> new BaseFluidType(
                 WATER_STILL_RL,
                 WATER_FLOWING_RL,
-                SOAP_OVERLAY_RL,
-        0xA1E038,
-                new Vector3f(224f/255f, 56f/255f, 208f/255f),
+                CHAI_OVERLAY_RL,
+                0xFFB8896F,
+                new Vector3f(
+                        224f/255f,
+                        56f/255f,
+                        208f/255f),
                 properties));
     }
 

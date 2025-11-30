@@ -5,6 +5,8 @@ import com.hasnat4763.kacchi.fluids.ModFluidTypes;
 import com.hasnat4763.kacchi.fluids.ModFluids;
 import com.hasnat4763.kacchi.item.ModCreativeModeTabs;
 import com.hasnat4763.kacchi.item.ModItems;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -27,7 +29,7 @@ public class kacchi {
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public kacchi(IEventBus modEventBus, ModContainer modContainer) {
+    public kacchi(IEventBus modEventBus, ModContainer ignoredModContainer) {
 
         modEventBus.addListener(this::commonSetup);
         NeoForge.EVENT_BUS.register(this);
@@ -42,6 +44,9 @@ public class kacchi {
     private void commonSetup(FMLCommonSetupEvent event) {
         // Some common setup code
         LOGGER.info("HELLO FROM COMMON SETUP");
+        ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_CHAI_FLUID.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_CHAI_FLUID.get(), RenderType.translucent());
+
 
     }
 
